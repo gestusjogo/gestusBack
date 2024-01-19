@@ -2,7 +2,7 @@
   "name": "jit-model",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "src/config/server/server.js",
   "type": "module",
   "scripts": {
     "dev": "nodemon ./src/config/server/server.js",

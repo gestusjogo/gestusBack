@@ -5,7 +5,8 @@ import AvaliacaoController from "./controllers/AvaliacaoController.js";
 
 const router = Router();
 
-router.post('/usuarios', UsuarioController.create);
+router.post('/usuarios/single', UsuarioController.createSingle);
+router.post('/usuarios/multiplo', UsuarioController.createMulti);
 router.get('/usuarios/:id', UsuarioController.findById);
 router.get('/usuarios', UsuarioController.findAll);
 router.put('/usuarios/:id', UsuarioController.updateById);

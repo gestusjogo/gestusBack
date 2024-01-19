@@ -13,7 +13,7 @@ class UsuarioRepository {
           reject(erro);
         } else {
           const rows = result.rows;
-          const usuarios = rows.map((row) => {
+          const usuario = rows.map((row) => {
             return new Usuario(
               row.nome,
               row.idade,
@@ -21,7 +21,7 @@ class UsuarioRepository {
               row.multiplayer
             );
           });
-          resolve(usuarios);
+          resolve(usuario);
         }
       });
     });
@@ -29,7 +29,7 @@ class UsuarioRepository {
 
   create(usuario) {
     const sql =
-      "INSERT INTO usuarios (nome, idade, data, multiplayer) VALUES ($1, $2, $3, $4) RETURNING *;";
+      "INSERT INTO usuario (nome, idade, data, multiplayer) VALUES ($1, $2, $3, $4) RETURNING *;";
     return this.queryUsuario(sql, [
       usuario.nome,
       usuario.idade,
@@ -39,24 +39,24 @@ class UsuarioRepository {
   }
 
   findAll() {
-    const sql = "SELECT * FROM usuarios ORDER BY id ASC;";
+    const sql = "SELECT * FROM usuario ORDER BY id ASC;";
     return this.queryUsuario(sql);
   }
 
   findById(id) {
-    const sql = "SELECT * FROM usuarios WHERE id = $1;";
+    const sql = "SELECT * FROM usuario WHERE id = $1;";
     return this.queryUsuario(sql, [id])
-      .then((usuarios) => {
-        if (usuarios.length === 0) {
+      .then((usuario) => {
+        if (usuario.length === 0) {
           return null;
         }
-        return usuarios[0];
+        return usuario[0];
       });
   }
 
   update(id, usuario) {
     const sql =
-      "UPDATE usuarios SET nome=$1, idade=$2, data=$3, multiplayer=$4 WHERE id = $5;";
+      "UPDATE usuario SET nome=$1, idade=$2, data=$3, multiplayer=$4 WHERE id = $5;";
     return this.queryUsuario(sql, [
       usuario.nome,
       usuario.idade,
@@ -67,7 +67,7 @@ class UsuarioRepository {
   }
 
   delete(id) {
-    const sql = "DELETE FROM usuarios WHERE id = $1;";
+    const sql = "DELETE FROM usuario WHERE id = $1;";
     return this.queryUsuario(sql, [id]);
   }
 }

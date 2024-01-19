@@ -1,4 +1,4 @@
-import FasesConcluidas from "../models/FasesConcluidas.js";
+import FasesConcluidas from "../model/FasesConcluidas.js";
 import FasesConcluidasRepository from "../repositories/FasesConcluidasRepository.js";
 
 class FasesConcluidasController {

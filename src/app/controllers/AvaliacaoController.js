@@ -1,4 +1,4 @@
-import Avaliacao from "../models/Avaliacao.js";
+import Avaliacao from "../model/Avaliacao.js";
 import AvaliacaoRepository from "../repositories/AvaliacaoRepository.js";
 
 class AvaliacaoController {

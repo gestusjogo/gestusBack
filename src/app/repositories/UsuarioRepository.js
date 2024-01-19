@@ -1,5 +1,5 @@
 import connection from "../../config/database/connection.js";
-import Usuario from "../models/Usuario.js"; // Importe o modelo de Usuario
+import Usuario from "../model/Usuario.js"; // Importe o modelo de Usuario
 
 class UsuarioRepository {
   queryUsuario(sql, params = "") {

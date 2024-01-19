@@ -1,5 +1,5 @@
 import connection from "../../config/database/connection.js";
-import FasesConcluidas from "../models/FasesConcluidas.js";
+import FasesConcluidas from "../model/FasesConcluidas.js";
 
 class FasesConcluidasRepository {
   queryFasesConcluidas(sql, params = []) {

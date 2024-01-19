@@ -1,5 +1,5 @@
 import connection from "../../config/database/connection.js";
-import Avaliacao from "../models/Avaliacao.js";
+import Avaliacao from "../model/Avaliacao.js";
 
 class AvaliacaoRepository {
   queryAvaliacao(sql, params = []) {
